@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+      .fade {
+        transition: opacity 3s ease-in-out;
+      }
+      .opacity-0 {
+        opacity: 0;
+      }
+      .opacity-100 {
+        opacity: 1;
+      }
+    </style>
+    <title>For dearest Rei</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  </head>
+  <script src="//unpkg.com/alpinejs" defer></script>
+  <body class="w-full h-full bg-black">
+    <div id="particles-js" class="fixed inset-0 -z-10"></div>
+
+    <main class="w-full h-full">
+      <div
+        class="flex flex-col min-h-screen justify-center items-center"
+        x-data="container"
+      >
+        <h1
+          x-show="show"
+          x-transition:enter="fade"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-init="$nextTick(() => show = true)"
+          x-cloak
+          class="text-white font-cutiepatootie text-4xl"
+        >
+          For my Darling Rei
+        </h1>
+        <div x-data="{ open: false }">
+          <button
+            x-show="show"
+            x-transition:enter="fade"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-init="$nextTick(() => show = true)"
+            x-cloak
+            class="text-blue-900 font-cutiepatootie text-2xl"
+            @click="open = !open"
+          >
+            Do you know how much I love you?<br />
+            -------------(click me!)-------------
+          </button>
+          <!-- This div will now show with fade transition -->
+          <div
+            x-show="open"
+            x-transition:enter="fade"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="fade"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="text-white absolute"
+          >
+            <p>
+              My dearest, my love, my darling, <br />
+              my baby, I love you more than you <br />could ever know. I know
+              that <br />
+              sometimes we fight and you end up <br />
+              crying afterwards, which <br />
+              breaks my heart to hear, but I want <br />
+              you to know that I love you, <br />and that would never change
+              <br />— not now and not forever. <br />I'm proud of you, darling,
+              and <br />always remember, I love you!
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script>
+    document.addEventListener("alpine:init", () => {
+      Alpine.data("container", () => ({
+        show: false,
+      }));
+    });
+
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 100, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: {
+          value: 0.8,
+          random: true,
+          anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false },
+        },
+        size: {
+          value: 2,
+          random: true,
+          anim: { enable: false },
+        },
+        move: {
+          enable: true,
+          speed: 0.2,
+          direction: "none",
+          out_mode: "out",
+        },
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: false },
+          onclick: { enable: false },
+          resize: true,
+        },
+      },
+      retina_detect: true,
+    });
+  </script>
+</html>

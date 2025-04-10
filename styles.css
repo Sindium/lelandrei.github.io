@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'cutiepatootie';
+  src: url('../reiwebsite/assets/fonts/CutiePatootie-Rgjv.ttf');
+}
+
+@theme {
+  --font-cutiepatootie: cutiepatootie, "sans-serif"
+}

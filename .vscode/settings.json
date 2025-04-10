@@ -1,0 +1,13 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.autoSave": "onFocusChange",
+  "tailwindCSS.includeLanguages": {
+    "html": "html"
+  },
+  "css.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
+  "liveServer.settings.port": 5500
+}
